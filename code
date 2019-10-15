@@ -1,0 +1,35 @@
+#include <SimpleDHT.h>
+#include <SoftwareSerial.h>
+int pinDHT11 = 2;
+SoftwareSerial GPRS(2,3);
+SimpleDHT11 dht11(pinDHT11);
+boolean state1, lastState1,state2, lastState2,state3, lastState3;
+
+int a,b;
+int sensor1_pin = 8;
+int sensor2_pin = 9;
+int sensor3_pin = 10;
+
+int OUT1;
+int OUT2;
+int OUT3;
+
+
+void setup()
+{
+  pinMode(8, INPUT_PULLUP);
+  pinMode(9, INPUT_PULLUP);
+  pinMode(10, INPUT_PULLUP);
+  state1 = digitalRead(8);
+  state2 = digitalRead(9);
+  state3 = digitalRead(10);
+  lastState1 = state1;
+  lastState2 = state2;
+  lastState3 = state3;
+  
+  GPRS.begin(9600);
+  Serial.begin(9600);
+  
+  GPRS.println("AT+CMGF=1");
+  delay(500);
+}
