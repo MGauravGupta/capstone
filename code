@@ -49,3 +49,36 @@ byte temperature=0;
   OUT1= digitalRead(8);
   OUT2= digitalRead(9);
   OUT3= digitalRead(10)
+ if (OUT1==HIGH)
+ {
+  if (OUT2==HIGH)
+  {
+    if (OUT3==HIGH)
+    {
+      digitalWrite(11,HIGH);
+      digitalWrite(12,HIGH);
+      digitalWrite(13,HIGH);
+      delay(2000);
+    digitalWrite(11,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(13,LOW);
+    }
+    else 
+    {
+      digitalWrite(11,HIGH);
+      digitalWrite(12,HIGH);
+      digitalWrite(13,LOW);
+      delay(2000);
+    digitalWrite(11,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(13,LOW);
+    }
+  }else 
+  {   digitalWrite(11,HIGH);
+      digitalWrite(12,LOW);
+      digitalWrite(13,LOW);
+      delay(2000);
+    digitalWrite(11,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(13,LOW);
+  }
