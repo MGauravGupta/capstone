@@ -1,2 +1,2 @@
-# capstone
-self sustained automated irrigation system 
+# Self Sustained Automated Irrigation System 
+
